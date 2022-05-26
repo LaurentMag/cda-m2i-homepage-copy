@@ -1,0 +1,173 @@
+// flex-modulable($direction: null, $justify: null, $align: null, $gap: 0)
+
+header {
+  height: 38.3rem;
+  overflow: hidden;
+  position: relative;
+
+  @include flex-modulable(column, center, center);
+}
+
+.filter {
+  position: absolute;
+  z-index: -9;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(113deg, rgba(255, 0, 0, 0.45) 0%, rgba(0, 5, 120, 0.45) 70%);
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::
+// VIDEO
+.video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
+
+  video {
+    // to get gradient above video
+    //( since video is after header in html, so goes above )
+    position: relative;
+
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::
+// SEARCH PART
+.header__form {
+  @include flex-modulable(column, center, center);
+  color: white;
+
+  margin-block-start: 9.5rem;
+
+  width: min(60rem, 95%);
+
+  // cant select otherwise, seem to be below the video & so
+  // position: relative;
+  // z-index: 1;
+
+  // ::::::::::::::::::::
+  // TOP TEXT
+  h1 {
+    font-size: $font-size-form-h1;
+    font-weight: 400;
+    letter-spacing: 0.01rem;
+    width: 100%;
+
+    text-align: center;
+  }
+  .header__form-second-h {
+    font-size: $font-size-form-label;
+    font-weight: 900;
+    letter-spacing: 0.001rem;
+
+    line-height: 4rem;
+
+    margin-block-end: 1.1rem;
+
+    text-align: center;
+  }
+  // ::::::::::::::::::::
+  // INPUT & SEARCH LOGO
+  form {
+    @include flex-modulable(null, center, center, 1rem);
+
+    width: 100%;
+
+    input {
+      width: 100%;
+      height: 4.4rem;
+
+      border: 2px solid white;
+      border-radius: 2.5rem;
+      background-color: transparent;
+      outline: none;
+
+      font-size: $font-size-form-input;
+      padding: 2rem;
+      color: white;
+
+      // FOCUS :::::::::::::
+      &:focus {
+        background-color: rgba(255, 255, 255, 0.844);
+        color: rgb(79, 78, 78);
+      }
+    }
+
+    .search-icon {
+      width: 5rem;
+      aspect-ratio: 1;
+
+      background: $color-red url("../img/pictos/search.svg") no-repeat center center;
+      background-size: 45%;
+      border-radius: 100%;
+
+      &:hover {
+        background-color: $color-blue-hover;
+      }
+    }
+  }
+  // ::::::::::::::::::::
+  // SEARCH EXEMPLE BELOW SEARCH BAR
+  .search-exemple {
+    font-size: $font-size-form-search-exemple;
+    align-self: flex-start;
+    margin-block-start: 1rem;
+    margin-inline-start: 2rem;
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::
+// AVIS
+
+.header__avis {
+  z-index: 1;
+  cursor: pointer;
+  color: white;
+
+  width: fit-content;
+
+  position: relative;
+  top: 4rem;
+
+  a {
+    @include flex-modulable(column, center, center, 0.2rem);
+    text-decoration: none;
+
+    font-size: 1.7rem;
+    font-weight: 900;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .star-fill {
+    width: $figure-width-star-avis;
+    aspect-ratio: 1;
+  }
+  .star-quarter {
+    width: $figure-width-star-avis;
+    aspect-ratio: 1;
+    position: relative;
+    z-index: 99;
+  }
+  .avis-verif-figure {
+    width: 6rem;
+    img {
+      width: 100%;
+      height: 80%;
+    }
+  }
+
+  .note-and-stars {
+    @include flex-modulable(null, null, center, 1rem);
+
+    div {
+      @include flex-modulable(null, null, center, 0.3rem);
+    }
+  }
+}

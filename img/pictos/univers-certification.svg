@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60.608 66">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f83131;
+      }
+
+      .cls-2 {
+        fill: #ad2e2e;
+      }
+
+      .cls-3 {
+        fill: #c13333;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="medal" transform="translate(-20.75)">
+    <circle id="Ellipse_80" data-name="Ellipse 80" class="cls-1" cx="26.205" cy="26.205" r="26.205" transform="translate(24.791 0)"/>
+    <g id="Groupe_2403" data-name="Groupe 2403" transform="translate(20.75 41.458)">
+      <path id="Tracé_3994" data-name="Tracé 3994" class="cls-2" d="M29.767,319.7,20.75,335.33l10.524-.559,4.781,9.393L44.4,329.7A26.179,26.179,0,0,1,29.767,319.7Z" transform="translate(-20.75 -319.622)"/>
+      <path id="Tracé_3995" data-name="Tracé 3995" class="cls-2" d="M319.64,319.1a26.187,26.187,0,0,1-14.59,10.056l8.367,14.486,4.781-9.393,10.524.559Z" transform="translate(-268.113 -319.1)"/>
+    </g>
+    <circle id="Ellipse_81" data-name="Ellipse 81" class="cls-3" cx="18.994" cy="18.994" r="18.994" transform="translate(32.001 7.211)"/>
+    <path id="Tracé_3996" data-name="Tracé 3996" class="cls-4" d="M177.39,114.4a.992.992,0,0,0-.546-1.689l-7.5-1.091a.977.977,0,0,1-.741-.546l-3.352-6.795a.991.991,0,0,0-1.78,0l-3.339,6.795a1.032,1.032,0,0,1-.741.546l-7.5,1.091a.992.992,0,0,0-.546,1.689l5.418,5.288a1,1,0,0,1,.286.87l-1.273,7.457a.99.99,0,0,0,1.442,1.039l6.7-3.521a.968.968,0,0,1,.922,0l6.7,3.521A1,1,0,0,0,173,128.017l-1.286-7.457a.977.977,0,0,1,.286-.87Z" transform="translate(-113.376 -90.249)"/>
+  </g>
+</svg>

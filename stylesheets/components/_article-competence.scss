@@ -1,0 +1,30 @@
+.article__competence {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 8rem;
+
+  margin-block-end: 2rem;
+
+  figure {
+    width: 105%;
+  }
+
+  a {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding-block: 0.2rem;
+    padding-inline: 0.4rem;
+    color: $color-red;
+    border: 1px solid $color-red;
+    border-radius: 2rem;
+  }
+}
+
+.card__competence-tags {
+  @include flex-modulable(null, null, center, 0.25rem);
+  flex-wrap: wrap;
+
+  margin-block-end: 1rem;
+}

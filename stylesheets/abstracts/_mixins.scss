@@ -1,0 +1,77 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+/// Make a context based selector a little more friendly
+/// @author Kitty Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+/* GRIDS */
+@mixin grid-column($value: null, $column-gap: null, $row-gap: null) {
+  display: grid;
+  grid-template-columns: $value;
+  column-gap: $column-gap;
+  row-gap: $row-gap;
+  @content;
+}
+
+/* FLEX */
+@mixin flex-modulable($direction: null, $justify: null, $align: null, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+/* before / after */
+@mixin before-after-starter(
+  $top: null,
+  $left: null,
+  $right: null,
+  $bottom: null,
+  $x: null,
+  $y: null,
+  $height: null,
+  $width: null
+) {
+  content: "";
+  position: absolute;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $bottom;
+  transform: translate($x, $y);
+  height: $height;
+  width: $width;
+  @content;
+}

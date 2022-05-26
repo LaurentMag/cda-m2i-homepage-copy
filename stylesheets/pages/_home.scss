@@ -1,0 +1,364 @@
+// &nbsp;
+
+// scss files used
+// abstracts : mixins / variables
+// components : articles-competence / card / button
+// layout : Header / navigation / footer
+
+.center {
+  margin-inline: auto;
+  padding-inline: 3.75rem;
+  padding-block: 5rem;
+  max-width: 83.75rem;
+}
+
+.center2 {
+  margin-inline: auto;
+  padding-block: 3.75rem;
+  max-width: 83.75rem;
+}
+
+.gray {
+  background-color: $color-section-gray-background;
+}
+
+.center-flex-column {
+  @include flex-modulable(column, center, center);
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ARTCILES FORMATIONS
+.articles__main-container-presentation-formations {
+  @include flex-modulable(column, center, center, 1.5rem);
+
+  .article-p {
+    text-align: center;
+  }
+
+  .articles__sub-container-presentation-formation {
+    @include flex-modulable(null, center, center, 0.4rem);
+
+    article p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ARTIClES COMPETENCES
+.articles__main-container-competences {
+  margin-block: 70px;
+}
+
+.article__competence:nth-child(2n) {
+  .article__competence-text {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  .article__competence-figure {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+}
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// 1 formation 1 job h & p
+.article__competence:nth-child(1) {
+  figure {
+    width: 85%;
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// CARD SECTION 2
+.articles__main-container-actualites-formation {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) max-content;
+  gap: 0.4rem;
+}
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// M2I univers
+
+.articles__m2i-univers-container {
+  @include flex-modulable(null, center, null, 4rem);
+
+  h2 {
+    flex-basis: 65%;
+  }
+}
+
+.m2i-univers__article {
+  max-width: 40rem;
+  display: grid;
+
+  h3 {
+    align-self: start;
+
+    padding-block: 5rem 1rem;
+    max-width: 55%;
+  }
+
+  .modalite {
+    background: url("../img/pictos/univers-modalite.svg") no-repeat 0% 5%;
+    background-size: $logo-m2i-universe-pourcentage;
+  }
+
+  .certificate {
+    background: url("../img/pictos/univers-certification.svg") no-repeat 0% 0%;
+    background-size: $logo-m2i-universe-pourcentage;
+  }
+
+  .test-knowledge {
+    background: url("../img/pictos/univers-connaissance.svg") no-repeat 0% 0%;
+    background-size: calc($logo-m2i-universe-pourcentage * 1.4);
+  }
+
+  p {
+    min-width: 200px;
+    max-width: 70%;
+  }
+  button {
+    align-self: end;
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ACTUALITE
+
+.articles__m2i-actualite {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) max-content;
+  column-gap: 0.4rem;
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// WORLDMAP
+
+.worldmap {
+  height: 43.75rem;
+  background: #e9f6fe url("../img/carte-fond.png") no-repeat center center;
+  position: relative;
+
+  h3 {
+    max-width: 50%;
+    margin-inline-start: 20%;
+    padding-block-start: 5%;
+  }
+
+  .worldmap-zoom {
+    width: 40rem;
+    aspect-ratio: 1;
+    background: #e9f6fe url("../img/carte-zoom.png") no-repeat center center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    border: 2px solid #b0dde7;
+  }
+
+  .agency-location {
+    width: 30rem;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.05rem;
+    font-weight: 900;
+
+    color: #606060;
+    transition: color 0.25s, font-size 0.25s, padding 0.25s;
+
+    padding-block-start: 5rem;
+
+    background: url("../img/folder_unknow_icon_207129.svg") no-repeat center 30%;
+    background-size: 50%;
+
+    &:hover {
+      color: red;
+      cursor: pointer;
+      font-size: 1.4rem;
+      padding-block-start: 6rem;
+    }
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// m2i STANDARD
+
+.article__m2i-standard {
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.005rem;
+    line-height: 1.8rem;
+
+    margin-block-end: 3rem;
+  }
+}
+
+.header__avis-bottom-page {
+  cursor: pointer;
+  color: black;
+
+  a {
+    @include flex-modulable(column, center, center, 0.2rem);
+    text-decoration: none;
+
+    font-size: 1.7rem;
+    font-weight: 900;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  .star-fill {
+    width: $figure-width-star-avis;
+    aspect-ratio: 1;
+  }
+  .star-quarter {
+    width: $figure-width-star-avis;
+    aspect-ratio: 1;
+    position: relative;
+    z-index: 99;
+  }
+  .avis-verif-figure {
+    width: 6rem;
+    img {
+      width: 100%;
+      height: 80%;
+    }
+  }
+
+  .note-and-stars {
+    @include flex-modulable(column, center, center, 0.2rem);
+
+    div {
+      @include flex-modulable(null, null, center, 0.3rem);
+    }
+  }
+}
+
+.article__m2i-standard-container {
+  @include flex-modulable(null, center, flex-end, 3rem);
+
+  figure {
+    max-width: 10rem;
+  }
+}
+
+// :::::::::::::::::::::::::::::::::::
+.article__m2i-standard-descrip {
+  @include flex-modulable(null, center, null, 2rem);
+  // max-width: 70%;
+  margin-inline: auto;
+  margin-block-start: 2rem;
+}
+.article-standard {
+  background-color: white;
+  padding: 2rem;
+  flex-basis: 100%;
+
+  figure {
+    width: 10rem;
+    margin-block-end: 1.8rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    font-weight: 200;
+    letter-spacing: 0.005rem;
+    width: 100%;
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// TRUST US
+
+.trust-us {
+  div {
+    @include flex-modulable(column, center, center, 2.5rem);
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    .not-a-carousel {
+      @include flex-modulable(row, center, center, 2.5rem);
+    }
+  }
+}
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// CONTACT US
+
+.contact-us {
+  background: #f83131 url(../img/visuel-contact.jpeg) no-repeat center center;
+  background-size: cover;
+  position: relative;
+
+  .filter2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(113deg, rgba(255, 0, 0, 0.45) 0%, rgba(0, 5, 120, 0.45) 70%);
+  }
+
+  .contact-flex {
+    @include flex-modulable(row, space-between, center, 5rem);
+    p {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-size: 2.7rem;
+      font-weight: 900;
+      letter-spacing: 0.001rem;
+
+      line-height: 3rem;
+
+      max-width: 50%;
+
+      padding-block: 3rem;
+    }
+
+    button {
+      position: relative;
+      z-index: 1;
+      font-size: 1.2rem;
+      padding: 1.1rem 1.1rem 1.1rem 2.6rem;
+    }
+  }
+}

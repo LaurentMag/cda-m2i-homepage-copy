@@ -1,0 +1,113 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+// ---------------------------------------------------------------------------
+
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+img,
+figure,
+article,
+section,
+main,
+header,
+nav,
+footer,
+a,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  color: unset;
+}
+
+// ---------------------------------------------------------------------------
+
+.general__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.h2__general {
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: 0.005rem;
+  line-height: 1.8rem;
+}
+.h3__general {
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.005rem;
+  line-height: 1.8rem;
+}
+
+.p__general {
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.005rem;
+  width: 100%;
+}
+
+.p__grey-text {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.05rem;
+  font-weight: 400;
+
+  color: #606060;
+}
+
+.font-nav-menu-left {
+  font-family: $font-family-arial;
+  font-size: 1.2rem;
+  font-weight: 900;
+  line-height: 1.45rem;
+}
+
+.font-nav-menu {
+  font-family: $font-family-arial;
+  font-size: 0.9rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}

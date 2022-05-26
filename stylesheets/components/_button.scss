@@ -1,0 +1,44 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.article__competence-button {
+  background: $color-red url("../img/pictos/arrow.svg") no-repeat 10% 50%;
+  background-size: 1.1rem;
+
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: $color-text-grayish;
+
+  padding: 0.9rem 0.9rem 0.9rem 2.6rem;
+  margin-block-start: 1rem;
+
+  border: none;
+  border-radius: 0.2rem;
+
+  width: fit-content;
+  height: fit-content;
+
+  &:hover {
+    background-color: $color-blue-hover;
+    cursor: pointer;
+  }
+}
+
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+// ::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+.right-side-button {
+  width: 5.625rem;
+  height: 100%;
+  border: none;
+
+  background: $color-red url("../img/pictos/add.svg") no-repeat center center;
+  background-size: 50%;
+
+  &:hover {
+    background-color: $color-blue-hover;
+    cursor: pointer;
+  }
+}
